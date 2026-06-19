@@ -8,6 +8,7 @@ import {
   addProductReq,
   updateProductReq,
   deleteProductReq,
+  addCategoryReq,
 } from '@/lib/api-client'
 import { scoreProduct, productHaystack } from '@/lib/format'
 import { Masthead } from './masthead'
@@ -26,7 +27,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
-import { Plus, Store, ScanBarcode, Mic } from 'lucide-react'
+import { Plus, Store, ScanBarcode, Mic, Loader2 } from 'lucide-react'
 import { toast } from 'sonner'
 
 type CatalogAppProps = {
@@ -37,6 +38,10 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
   const { mutate } = useSWRConfig()
   const [stores, setStores] = useState<StoreMeta[]>(initialStores)
   const [activeStoreId, setActiveStoreId] = useState(initialStores[0]?.id ?? '')
+  const [categoryDialogOpen, setCategoryDialogOpen] = useState(false)
+  const [newCategoryName, setNewCategoryName] = useState('')
+  const [newCategoryParent, setNewCategoryParent] = useState('')
+  const [isAddingCategory, setIsAddingCategory] = useState(false)
 
   const { data, isLoading } = useSWR<{ catalog: StoreCatalog }>(
     activeStoreId ? `/api/stores/${activeStoreId}` : null,
@@ -196,6 +201,12 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
     setEditorState({ mode: 'create', product: base })
   }
 
+  function openAddCategory() {
+    setNewCategoryName('')
+    setNewCategoryParent('')
+    setCategoryDialogOpen(true)
+  }
+
   function handleScanResult(code: string) {
     setScanOpen(false)
     const existing = products.find((p) => p.barcode && p.barcode === code)
@@ -256,7 +267,18 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
             <Mic className="h-4 w-4 sm:mr-1.5" />
             <span className="hidden sm:inline">Listen</span>
           </Button>
-          <div className="ml-auto">
+
+          {/* Grouped Add buttons */}
+          <div className="ml-auto flex items-center gap-2">
+            <Button
+              type="button"
+              size="sm"
+              className="rounded-none bg-red text-paper hover:bg-red/90"
+              onClick={openAddCategory}
+            >
+              <Plus className="h-4 w-4 sm:mr-1.5" />
+              <span className="hidden sm:inline">Add Category</span>
+            </Button>
             <Button
               type="button"
               size="sm"
@@ -361,6 +383,92 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
                 onClose={() => setScanOpen(false)}
               />
             ) : null}
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Add Category Dialog */}
+      <Dialog open={categoryDialogOpen} onOpenChange={setCategoryDialogOpen}>
+        <DialogContent className="rounded-none border-2 border-ink bg-paper p-0 sm:max-w-md">
+          <DialogHeader className="border-b-2 border-ink bg-ink px-4 py-3 text-left">
+            <DialogTitle className="font-heading text-paper">Add Category</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4 p-4">
+            <div>
+              <label htmlFor="categoryName" className="block text-sm font-medium">
+                Category Name
+              </label>
+              <input
+                id="categoryName"
+                type="text"
+                value={newCategoryName}
+                onChange={(e) => setNewCategoryName(e.target.value)}
+                className="w-full border-2 border-ink bg-paper p-2 outline-none focus:ring-2 focus:ring-red"
+                placeholder="e.g., Dairy"
+              />
+            </div>
+            <div>
+              <label htmlFor="parentCategory" className="block text-sm font-medium">
+                Parent Category (optional)
+              </label>
+              <select
+                id="parentCategory"
+                value={newCategoryParent}
+                onChange={(e) => setNewCategoryParent(e.target.value)}
+                className="w-full border-2 border-ink bg-paper p-2 outline-none focus:ring-2 focus:ring-red"
+              >
+                <option value="">None (top-level)</option>
+                {categories.map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="flex justify-end gap-2 pt-2">
+              <Button
+                variant="outline"
+                className="rounded-none border-ink"
+                onClick={() => setCategoryDialogOpen(false)}
+                disabled={isAddingCategory}
+              >
+                Cancel
+              </Button>
+              <Button
+                className="rounded-none bg-red text-paper hover:bg-red/90 disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={isAddingCategory}
+                onClick={async () => {
+                  const name = newCategoryName.trim()
+                  if (!name) {
+                    toast.error('Category name is required')
+                    return
+                  }
+                  setIsAddingCategory(true)
+                  try {
+                    await addCategoryReq(activeStoreId, {
+                      name,
+                      parentId: newCategoryParent || null,
+                    })
+                    toast.success('Category added')
+                    refresh()
+                    setCategoryDialogOpen(false)
+                  } catch {
+                    toast.error('Failed to add category')
+                  } finally {
+                    setIsAddingCategory(false)
+                  }
+                }}
+              >
+                {isAddingCategory ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Saving...
+                  </>
+                ) : (
+                  'Add Category'
+                )}
+              </Button>
+            </div>
           </div>
         </DialogContent>
       </Dialog>

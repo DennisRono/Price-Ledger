@@ -1,4 +1,4 @@
-import type { Product, StoreCatalog, StoreMeta } from './types'
+import type { Category, Product, StoreCatalog, StoreMeta } from './types'
 
 export const fetcher = async (url: string) => {
   const res = await fetch(url)
@@ -73,6 +73,20 @@ export async function uploadImageReq(
   if (!res.ok) throw new Error('Upload failed')
   const data = await res.json()
   return data.url as string
+}
+
+export async function addCategoryReq(
+  storeId: string,
+  category: { name: string; parentId?: string | null }
+): Promise<Category> {
+  const res = await fetch(`/api/stores/${storeId}/categories`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(category),
+  })
+  if (!res.ok) throw new Error('Failed to add category')
+  const data = await res.json()
+  return data.category
 }
 
 export type { Product, StoreCatalog, StoreMeta }
