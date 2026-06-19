@@ -1,0 +1,5712 @@
+{
+  "store": "Pitt Quick Stop at Ensley",
+  "generated": "2026-06-18",
+  "schema_version": "1.0.0",
+  "categories": [
+    {
+      "id": "beverages",
+      "name": "Beverages",
+      "parentId": null
+    },
+    {
+      "id": "soda",
+      "name": "Soda & Carbonated Soft Drinks",
+      "parentId": "beverages"
+    },
+    {
+      "id": "water",
+      "name": "Bottled Water",
+      "parentId": "beverages"
+    },
+    {
+      "id": "energy_drinks",
+      "name": "Energy Drinks",
+      "parentId": "beverages"
+    },
+    {
+      "id": "sports_drinks",
+      "name": "Sports Drinks",
+      "parentId": "beverages"
+    },
+    {
+      "id": "juice",
+      "name": "Juice",
+      "parentId": "beverages"
+    },
+    {
+      "id": "tea",
+      "name": "Tea",
+      "parentId": "beverages"
+    },
+    {
+      "id": "coffee",
+      "name": "Bottled & Packaged Coffee",
+      "parentId": "beverages"
+    },
+    {
+      "id": "dispensed_beverages",
+      "name": "Fountain & Dispensed Beverages",
+      "parentId": "beverages"
+    },
+    {
+      "id": "alcohol",
+      "name": "Alcohol",
+      "parentId": null
+    },
+    {
+      "id": "beer",
+      "name": "Beer & Malt Liquor",
+      "parentId": "alcohol"
+    },
+    {
+      "id": "wine",
+      "name": "Wine",
+      "parentId": "alcohol"
+    },
+    {
+      "id": "cocktails",
+      "name": "Flavored Malt Beverages & RTD Cocktails",
+      "parentId": "alcohol"
+    },
+    {
+      "id": "snacks",
+      "name": "Snacks",
+      "parentId": null
+    },
+    {
+      "id": "chips",
+      "name": "Chips, Crisps & Popcorn",
+      "parentId": "snacks"
+    },
+    {
+      "id": "candy",
+      "name": "Candy, Chocolate & Gummies",
+      "parentId": "snacks"
+    },
+    {
+      "id": "gum",
+      "name": "Gum & Mints",
+      "parentId": "snacks"
+    },
+    {
+      "id": "health",
+      "name": "Health & OTC",
+      "parentId": null
+    },
+    {
+      "id": "otc_medicine",
+      "name": "Over-the-Counter Medicine",
+      "parentId": "health"
+    },
+    {
+      "id": "household",
+      "name": "Household & Paper Goods",
+      "parentId": null
+    },
+    {
+      "id": "paper_goods",
+      "name": "Paper Goods",
+      "parentId": "household"
+    },
+    {
+      "id": "wipes",
+      "name": "Wipes",
+      "parentId": "household"
+    },
+    {
+      "id": "food_service",
+      "name": "Food Service",
+      "parentId": null
+    },
+    {
+      "id": "frozen_food",
+      "name": "Frozen Food",
+      "parentId": "food_service"
+    }
+  ],
+  "tax_categories": [
+    {
+      "id": "general_merchandise",
+      "label": "General Merchandise",
+      "notes": "Standard AL state + Jefferson County + City of Birmingham combined sales tax. Configure the current combined rate in store settings -- do not hardcode it per product."
+    },
+    {
+      "id": "grocery_food",
+      "label": "Grocery / Packaged Food & Drink",
+      "notes": "Alabama taxes groceries but at a reduced state rate for SNAP-eligible food items (the reduced state rate has been stepping down since 2023). Whether soda/candy qualify depends on current state rules -- confirm before relying on this label for tax calculation."
+    },
+    {
+      "id": "alcohol",
+      "label": "Alcohol",
+      "notes": "Subject to Alabama ABC excise tax in addition to standard sales tax. Confirm current rates with the AL ABC Board; do not assume promotional discounts are legal for alcohol without checking ABC rules first."
+    },
+    {
+      "id": "otc_medicine",
+      "label": "Over-the-Counter Medicine",
+      "notes": "Alabama does not generally exempt OTC drugs -- treat as taxable unless confirmed otherwise."
+    },
+    {
+      "id": "prepared_food",
+      "label": "Prepared / Dispensed / Hot Food",
+      "notes": "Fountain drinks, dispensed coffee, and frozen-to-hot items are often taxed differently than packaged grocery items in AL. Confirm local treatment."
+    }
+  ],
+  "products": [
+    {
+      "id": "PQS-0001",
+      "sku": "PQS-0001",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "heineken",
+      "name": "Heineken 16oz Can - Single",
+      "receipt_name": "HEINEKEN 16OZ CAN",
+      "description": "Heineken lager beer, single 16 fl oz can. Must be 21+.",
+      "brand": "Heineken",
+      "manufacturer": "Heineken N.V.",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "heineken",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 219,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0002",
+      "sku": "PQS-0002",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "red_stripe",
+      "name": "Red Stripe 16oz Can - Single",
+      "receipt_name": "RED STRIPE 16OZ CAN",
+      "description": "Red Stripe Jamaican lager, single 16 fl oz can. Must be 21+.",
+      "brand": "Red Stripe",
+      "manufacturer": "Heineken N.V.",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "red_stripe",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 219,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0003",
+      "sku": "PQS-0003",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "modelo_especial",
+      "name": "Modelo Especial 16oz Can - Single",
+      "receipt_name": "MODELO ESPECIAL 16OZ CAN",
+      "description": "Modelo Especial beer, single 16 fl oz can. Must be 21+.",
+      "brand": "Modelo Especial",
+      "manufacturer": "Constellation Brands",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "modelo_especial",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 219,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0004",
+      "sku": "PQS-0004",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "corona",
+      "name": "Corona Extra 16oz Can - Single",
+      "receipt_name": "CORONA EXTRA 16OZ CAN",
+      "description": "Corona Extra beer, single 16 fl oz can. Must be 21+.",
+      "brand": "Corona",
+      "manufacturer": "Constellation Brands",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "corona",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 219,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0005",
+      "sku": "PQS-0005",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "coors_banquet",
+      "name": "Coors Banquet 16oz Can - Single",
+      "receipt_name": "COORS BANQUET 16OZ CAN",
+      "description": "Coors Banquet beer, single 16 fl oz can. Must be 21+.",
+      "brand": "Coors Banquet",
+      "manufacturer": "Molson Coors",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "coors_banquet",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 219,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0006",
+      "sku": "PQS-0006",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "miller_highlife",
+      "name": "Miller High Life 16oz Can - Single",
+      "receipt_name": "MILLER HIGH LIFE 16OZ CAN",
+      "description": "Miller High Life beer, single 16 fl oz can. Must be 21+.",
+      "brand": "Miller High Life",
+      "manufacturer": "Molson Coors",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "miller_high_life",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 149,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0007",
+      "sku": "PQS-0007",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "natural_light",
+      "name": "Natural Light 16oz Can - Single",
+      "receipt_name": "NATURAL LIGHT 16OZ CAN",
+      "description": "Natural Light beer, single 16 fl oz can. Must be 21+.",
+      "brand": "Natural Light",
+      "manufacturer": "Anheuser-Busch",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "natural_light",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 159,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0008",
+      "sku": "PQS-0008",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "natural_ice",
+      "name": "Natural Ice 16oz Can - Single",
+      "receipt_name": "NATURAL ICE 16OZ CAN",
+      "description": "Natural Ice beer, single 16 fl oz can. Must be 21+.",
+      "brand": "Natural Ice",
+      "manufacturer": "Anheuser-Busch",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "natural_ice",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 159,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0009",
+      "sku": "PQS-0009",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "colt_45",
+      "name": "Colt 45 16oz Can - Single",
+      "receipt_name": "COLT 45 16OZ CAN",
+      "description": "Colt 45 malt liquor, single 16 fl oz can. Must be 21+.",
+      "brand": "Colt 45",
+      "manufacturer": "Molson Coors",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "colt_45",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 159,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0010",
+      "sku": "PQS-0010",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "coors_light",
+      "name": "Coors Light 16oz Can - Single",
+      "receipt_name": "COORS LIGHT 16OZ CAN",
+      "description": "Coors Light beer, single 16 fl oz can. Must be 21+.",
+      "brand": "Coors Light",
+      "manufacturer": "Molson Coors",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "coors_light",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 159,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0011",
+      "sku": "PQS-0011",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "dos_equis",
+      "name": "Dos Equis XX Especial 16oz Can - Single",
+      "receipt_name": "DOS EQUIS XX ESPECIAL 16OZ CAN",
+      "description": "Dos Equis XX Especial beer, single 16 fl oz can. Must be 21+.",
+      "brand": "Dos Equis",
+      "manufacturer": "Heineken N.V.",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "dos_equis",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 159,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0012",
+      "sku": "PQS-0012",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "icehouse",
+      "name": "Icehouse 16oz Can - Single",
+      "receipt_name": "ICEHOUSE 16OZ CAN",
+      "description": "Icehouse beer, single 16 fl oz can. Must be 21+.",
+      "brand": "Icehouse",
+      "manufacturer": "Molson Coors",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "icehouse",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 149,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0013",
+      "sku": "PQS-0013",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "michelob_ultra",
+      "name": "Michelob Ultra 16oz Can - Single",
+      "receipt_name": "MICHELOB ULTRA 16OZ CAN",
+      "description": "Michelob Ultra beer, single 16 fl oz can. Must be 21+.",
+      "brand": "Michelob Ultra",
+      "manufacturer": "Anheuser-Busch",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "michelob_ultra",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 159,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0014",
+      "sku": "PQS-0014",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "steel_reserve",
+      "name": "Steel Reserve 211 16oz Can - Single",
+      "receipt_name": "STEEL RESERVE 211 16OZ CAN",
+      "description": "Steel Reserve 211 malt liquor, single 16 fl oz can. Must be 21+.",
+      "brand": "Steel Reserve",
+      "manufacturer": "Molson Coors",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "steel_reserve",
+        "beer"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 159,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0015",
+      "sku": "PQS-0015",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "four_loko",
+      "name": "Four Loko 23.5oz Can",
+      "receipt_name": "FOUR LOKO 23.5OZ CAN",
+      "description": "Four Loko malt beverage, 23.5 fl oz can. Must be 21+.",
+      "brand": "Four Loko",
+      "manufacturer": null,
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "four_loko",
+        "beer"
+      ],
+      "size": {
+        "value": 23.5,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 339,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0016",
+      "sku": "PQS-0016",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "heineken",
+      "name": "Heineken 23.5oz Can",
+      "receipt_name": "HEINEKEN 23.5OZ CAN",
+      "description": "Heineken lager, 23.5 fl oz can. Must be 21+.",
+      "brand": "Heineken",
+      "manufacturer": "Heineken N.V.",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "heineken",
+        "beer"
+      ],
+      "size": {
+        "value": 23.5,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 339,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0017",
+      "sku": "PQS-0017",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "modelo_chelada",
+      "name": "Modelo Chelada 24oz Can",
+      "receipt_name": "MODELO CHELADA 24OZ CAN",
+      "description": "Modelo Chelada, 24 fl oz can. Must be 21+.",
+      "brand": "Modelo Chelada",
+      "manufacturer": "Constellation Brands",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "modelo_chelada",
+        "beer"
+      ],
+      "size": {
+        "value": 24,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0018",
+      "sku": "PQS-0018",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "smirnoff_ice",
+      "name": "Smirnoff Ice Smash 23.5oz Can",
+      "receipt_name": "SMIRNOFF ICE SMASH 23.5OZ CAN",
+      "description": "Smirnoff Ice Smash, 23.5 fl oz can. Must be 21+.",
+      "brand": "Smirnoff Ice",
+      "manufacturer": "Diageo",
+      "category": "alcohol",
+      "subcategory": "cocktails",
+      "tags": [
+        "smirnoff_ice",
+        "cocktails"
+      ],
+      "size": {
+        "value": 23.5,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0019",
+      "sku": "PQS-0019",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "seagrams",
+      "name": "Seagrams 23.5oz Can",
+      "receipt_name": "SEAGRAMS 23.5OZ CAN",
+      "description": "Seagrams flavored malt beverage, 23.5 fl oz can. Must be 21+.",
+      "brand": "Seagrams",
+      "manufacturer": null,
+      "category": "alcohol",
+      "subcategory": "cocktails",
+      "tags": [
+        "seagrams",
+        "cocktails"
+      ],
+      "size": {
+        "value": 23.5,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0020",
+      "sku": "PQS-0020",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "four_loko",
+      "name": "Four Loko Pregame 23.5oz Can",
+      "receipt_name": "FOUR LOKO PREGAME 23.5OZ CAN",
+      "description": "Four Loko Pregame, 23.5 fl oz can. Must be 21+.",
+      "brand": "Four Loko",
+      "manufacturer": null,
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "four_loko",
+        "beer"
+      ],
+      "size": {
+        "value": 23.5,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 209,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0021",
+      "sku": "PQS-0021",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "clubtails",
+      "name": "Clubtails 16oz Can",
+      "receipt_name": "CLUBTAILS 16OZ CAN",
+      "description": "Clubtails cocktail, 16 fl oz can. Must be 21+.",
+      "brand": "Clubtails",
+      "manufacturer": null,
+      "category": "alcohol",
+      "subcategory": "cocktails",
+      "tags": [
+        "clubtails",
+        "cocktails"
+      ],
+      "size": {
+        "value": 16,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 219,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0022",
+      "sku": "PQS-0022",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "clubtails",
+      "name": "Clubtails 24oz Can",
+      "receipt_name": "CLUBTAILS 24OZ CAN",
+      "description": "Clubtails cocktail, 24 fl oz can. Must be 21+.",
+      "brand": "Clubtails",
+      "manufacturer": null,
+      "category": "alcohol",
+      "subcategory": "cocktails",
+      "tags": [
+        "clubtails",
+        "cocktails"
+      ],
+      "size": {
+        "value": 24,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 319,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0023",
+      "sku": "PQS-0023",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "ritas",
+      "name": "Ritas 25oz Can",
+      "receipt_name": "RITAS 25OZ CAN",
+      "description": "Ritas flavored malt beverage, 25 fl oz can. Must be 21+.",
+      "brand": "Ritas",
+      "manufacturer": null,
+      "category": "alcohol",
+      "subcategory": "cocktails",
+      "tags": [
+        "ritas",
+        "cocktails"
+      ],
+      "size": {
+        "value": 25,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 319,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0024",
+      "sku": "PQS-0024",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "natural_light",
+      "name": "Natural Light 25oz Can",
+      "receipt_name": "NATURAL LIGHT 25OZ CAN",
+      "description": "Natural Light beer, 25 fl oz can. Must be 21+.",
+      "brand": "Natural Light",
+      "manufacturer": "Anheuser-Busch",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "natural_light",
+        "beer"
+      ],
+      "size": {
+        "value": 25,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0025",
+      "sku": "PQS-0025",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "hurricane",
+      "name": "Hurricane 25oz Can",
+      "receipt_name": "HURRICANE 25OZ CAN",
+      "description": "Hurricane high-gravity lager, 25 fl oz can. Must be 21+.",
+      "brand": "Hurricane",
+      "manufacturer": "Anheuser-Busch",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "hurricane",
+        "beer"
+      ],
+      "size": {
+        "value": 25,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0026",
+      "sku": "PQS-0026",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "natural_ice",
+      "name": "Natural Ice 25oz Can",
+      "receipt_name": "NATURAL ICE 25OZ CAN",
+      "description": "Natural Ice beer, 25 fl oz can. Must be 21+.",
+      "brand": "Natural Ice",
+      "manufacturer": "Anheuser-Busch",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "natural_ice",
+        "beer"
+      ],
+      "size": {
+        "value": 25,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0027",
+      "sku": "PQS-0027",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "bud_ice",
+      "name": "Bud Ice 25oz Can",
+      "receipt_name": "BUD ICE 25OZ CAN",
+      "description": "Bud Ice beer, 25 fl oz can. Must be 21+.",
+      "brand": "Bud Ice",
+      "manufacturer": "Anheuser-Busch",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "bud_ice",
+        "beer"
+      ],
+      "size": {
+        "value": 25,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 249,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0028",
+      "sku": "PQS-0028",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "dos_equis",
+      "name": "Dos Equis 25oz Can",
+      "receipt_name": "DOS EQUIS 25OZ CAN",
+      "description": "Dos Equis beer, 25 fl oz can. Must be 21+.",
+      "brand": "Dos Equis",
+      "manufacturer": "Heineken N.V.",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "dos_equis",
+        "beer"
+      ],
+      "size": {
+        "value": 25,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0029",
+      "sku": "PQS-0029",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "budweiser",
+      "name": "Budweiser 25oz Can",
+      "receipt_name": "BUDWEISER 25OZ CAN",
+      "description": "Budweiser beer, 25 fl oz can. Must be 21+.",
+      "brand": "Budweiser",
+      "manufacturer": "Anheuser-Busch",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "budweiser",
+        "beer"
+      ],
+      "size": {
+        "value": 25,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 299,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0030",
+      "sku": "PQS-0030",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "bud_light",
+      "name": "Bud Light 25oz Can",
+      "receipt_name": "BUD LIGHT 25OZ CAN",
+      "description": "Bud Light beer, 25 fl oz can. Must be 21+.",
+      "brand": "Bud Light",
+      "manufacturer": "Anheuser-Busch",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "bud_light",
+        "beer"
+      ],
+      "size": {
+        "value": 25,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 299,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0031",
+      "sku": "PQS-0031",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "bud_light_chelada",
+      "name": "Bud Light Chelada 25oz Can",
+      "receipt_name": "BUD LIGHT CHELADA 25OZ CAN",
+      "description": "Bud Light Chelada, 25 fl oz can. Must be 21+.",
+      "brand": "Bud Light Chelada",
+      "manufacturer": "Anheuser-Busch",
+      "category": "alcohol",
+      "subcategory": "cocktails",
+      "tags": [
+        "bud_light_chelada",
+        "cocktails"
+      ],
+      "size": {
+        "value": 25,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 299,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0032",
+      "sku": "PQS-0032",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "michelob_ultra",
+      "name": "Michelob Ultra 25oz Can",
+      "receipt_name": "MICHELOB ULTRA 25OZ CAN",
+      "description": "Michelob Ultra beer, 25 fl oz can. Must be 21+.",
+      "brand": "Michelob Ultra",
+      "manufacturer": "Anheuser-Busch",
+      "category": "alcohol",
+      "subcategory": "beer",
+      "tags": [
+        "michelob_ultra",
+        "beer"
+      ],
+      "size": {
+        "value": 25,
+        "unit": "fl_oz"
+      },
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 319,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "alcohol"
+      },
+      "compliance": {
+        "age_restricted": true,
+        "minimum_age": 21,
+        "requires_id_verification": true
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0033",
+      "sku": "PQS-0033",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "pringles",
+      "name": "Pringles Large Can",
+      "receipt_name": "PRINGLES LARGE CAN",
+      "description": "Pringles potato crisps, large can.",
+      "brand": "Pringles",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "chips",
+      "tags": [
+        "pringles",
+        "chips"
+      ],
+      "size": null,
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 369,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0034",
+      "sku": "PQS-0034",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "pringles",
+      "name": "Pringles Small Can",
+      "receipt_name": "PRINGLES SMALL CAN",
+      "description": "Pringles potato crisps, small can.",
+      "brand": "Pringles",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "chips",
+      "tags": [
+        "pringles",
+        "chips"
+      ],
+      "size": null,
+      "container": "can",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 179,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0035",
+      "sku": "PQS-0035",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "tamis",
+      "name": "Tamis Ridges Large",
+      "receipt_name": "TAMIS RIDGES LARGE",
+      "description": "Tamis Ridges potato chips, large bag.",
+      "brand": "Tamis",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "chips",
+      "tags": [
+        "tamis",
+        "chips"
+      ],
+      "size": null,
+      "container": "bag",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 279,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0036",
+      "sku": "PQS-0036",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "lance",
+      "name": "Lance Large Popcorn",
+      "receipt_name": "LANCE LARGE POPCORN",
+      "description": "Lance popped popcorn, large bag.",
+      "brand": "Lance",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "chips",
+      "tags": [
+        "lance",
+        "chips"
+      ],
+      "size": null,
+      "container": "bag",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 229,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0037",
+      "sku": "PQS-0037",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "toms",
+      "name": "Toms Ridges Large",
+      "receipt_name": "TOMS RIDGES LARGE",
+      "description": "Toms Ridges potato chips, large bag.",
+      "brand": "Toms",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "chips",
+      "tags": [
+        "toms",
+        "chips"
+      ],
+      "size": null,
+      "container": "bag",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 279,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0038",
+      "sku": "PQS-0038",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "sucker_punch",
+      "name": "Sucker Punch Pickles",
+      "receipt_name": "SUCKER PUNCH PICKLES",
+      "description": "Sucker Punch sour pickle candy.",
+      "brand": "Sucker Punch",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "sucker_punch",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 259,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0039",
+      "sku": "PQS-0039",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "reeses",
+      "name": "Reese's Super King Size",
+      "receipt_name": "REESE'S SUPER KING SIZE",
+      "description": "Reese's peanut butter cup, super king size.",
+      "brand": "Reese's",
+      "manufacturer": "The Hershey Company",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "reese_s",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 499,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0040",
+      "sku": "PQS-0040",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "reeses",
+      "name": "Reese's King Size",
+      "receipt_name": "REESE'S KING SIZE",
+      "description": "Reese's peanut butter cup, king size.",
+      "brand": "Reese's",
+      "manufacturer": "The Hershey Company",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "reese_s",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0041",
+      "sku": "PQS-0041",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "reeses",
+      "name": "Reese's Small Size",
+      "receipt_name": "REESE'S SMALL SIZE",
+      "description": "Reese's peanut butter cup, small size.",
+      "brand": "Reese's",
+      "manufacturer": "The Hershey Company",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "reese_s",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0042",
+      "sku": "PQS-0042",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "reeses",
+      "name": "Reese's Mini Size",
+      "receipt_name": "REESE'S MINI SIZE",
+      "description": "Reese's peanut butter cup, mini size.",
+      "brand": "Reese's",
+      "manufacturer": "The Hershey Company",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "reese_s",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0043",
+      "sku": "PQS-0043",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "hersheys",
+      "name": "Hershey's King Size",
+      "receipt_name": "HERSHEY'S KING SIZE",
+      "description": "Hershey's milk chocolate bar, king size.",
+      "brand": "Hershey's",
+      "manufacturer": "The Hershey Company",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "hershey_s",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 339,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0044",
+      "sku": "PQS-0044",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "hersheys",
+      "name": "Hershey's Small Bar",
+      "receipt_name": "HERSHEY'S SMALL BAR",
+      "description": "Hershey's milk chocolate bar, regular size.",
+      "brand": "Hershey's",
+      "manufacturer": "The Hershey Company",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "hershey_s",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 229,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0045",
+      "sku": "PQS-0045",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "kitkat",
+      "name": "Kit Kat King Size",
+      "receipt_name": "KIT KAT KING SIZE",
+      "description": "Kit Kat wafer bar, king size.",
+      "brand": "Kit Kat",
+      "manufacturer": "The Hershey Company",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "kit_kat",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 339,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0046",
+      "sku": "PQS-0046",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "jolly_rancher",
+      "name": "Jolly Rancher Ropes",
+      "receipt_name": "JOLLY RANCHER ROPES",
+      "description": "Jolly Rancher fruit-flavored chewy ropes.",
+      "brand": "Jolly Rancher",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "jolly_rancher",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 409,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0047",
+      "sku": "PQS-0047",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "trident",
+      "name": "Trident Gum",
+      "receipt_name": "TRIDENT GUM",
+      "description": "Trident sugar-free gum.",
+      "brand": "Trident",
+      "manufacturer": "Mondelez International",
+      "category": "snacks",
+      "subcategory": "gum",
+      "tags": [
+        "trident",
+        "gum"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 169,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0048",
+      "sku": "PQS-0048",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "mentos",
+      "name": "Mentos Gum",
+      "receipt_name": "MENTOS GUM",
+      "description": "Mentos gum.",
+      "brand": "Mentos",
+      "manufacturer": "Perfetti Van Melle",
+      "category": "snacks",
+      "subcategory": "gum",
+      "tags": [
+        "mentos",
+        "gum"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 539,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0049",
+      "sku": "PQS-0049",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "dentyne",
+      "name": "Dentyne Ice Gum",
+      "receipt_name": "DENTYNE ICE GUM",
+      "description": "Dentyne Ice sugar-free gum.",
+      "brand": "Dentyne",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "gum",
+      "tags": [
+        "dentyne",
+        "gum"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 179,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0050",
+      "sku": "PQS-0050",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "extra",
+      "name": "Extra Gum",
+      "receipt_name": "EXTRA GUM",
+      "description": "Extra sugar-free gum.",
+      "brand": "Extra",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "gum",
+      "tags": [
+        "extra",
+        "gum"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 199,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0051",
+      "sku": "PQS-0051",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "ferrero",
+      "name": "Ferrero Rocher Chocolate",
+      "receipt_name": "FERRERO ROCHER CHOC",
+      "description": "Ferrero Rocher premium chocolates.",
+      "brand": "Ferrero",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "ferrero",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 339,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0052",
+      "sku": "PQS-0052",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "sour_punch",
+      "name": "Sour Punch",
+      "receipt_name": "SOUR PUNCH",
+      "description": "Sour Punch chewy sour candy.",
+      "brand": "Sour Punch",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "sour_punch",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 199,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0053",
+      "sku": "PQS-0053",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "trolli",
+      "name": "Trolli Sour Brite",
+      "receipt_name": "TROLLI SOUR BRITE",
+      "description": "Trolli Sour Brite gummy worms.",
+      "brand": "Trolli",
+      "manufacturer": "Mondelez International",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "trolli",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 269,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0054",
+      "sku": "PQS-0054",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "sour_patch_kids",
+      "name": "Sour Patch Kids",
+      "receipt_name": "SOUR PATCH KIDS",
+      "description": "Sour Patch Kids assorted sour gummies.",
+      "brand": "Sour Patch Kids",
+      "manufacturer": "Mondelez International",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "sour_patch_kids",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 399,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0055",
+      "sku": "PQS-0055",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "starburst",
+      "name": "Starburst Gummies",
+      "receipt_name": "STARBURST GUMMIES",
+      "description": "Starburst fruit-flavored gummies.",
+      "brand": "Starburst",
+      "manufacturer": "Mars, Incorporated",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "starburst",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 319,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0056",
+      "sku": "PQS-0056",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "efrutti",
+      "name": "Efrutti",
+      "receipt_name": "EFRUTTI",
+      "description": "Efrutti fruit-flavored candy.",
+      "brand": "Efrutti",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "efrutti",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 309,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0057",
+      "sku": "PQS-0057",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "sweet_tarts",
+      "name": "Sweet Tarts",
+      "receipt_name": "SWEET TARTS",
+      "description": "Sweet Tarts chewy candy.",
+      "brand": "Sweet Tarts",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "sweet_tarts",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 369,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0058",
+      "sku": "PQS-0058",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "mike_and_ike",
+      "name": "Mike and Ike",
+      "receipt_name": "MIKE AND IKE",
+      "description": "Mike and Ike fruit-flavored chewy candies.",
+      "brand": "Mike and Ike",
+      "manufacturer": "Just Born",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "mike_and_ike",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 229,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0059",
+      "sku": "PQS-0059",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "albanese",
+      "name": "Albanese Candy",
+      "receipt_name": "ALBANESE CDY",
+      "description": "Albanese gummy bears.",
+      "brand": "Albanese",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "albanese",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 349,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0060",
+      "sku": "PQS-0060",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "hi_chew",
+      "name": "Hi-Chew Dessert Mix",
+      "receipt_name": "HI CHEW DESSERT MIX",
+      "description": "Hi-Chew chewy fruit candies, dessert mix.",
+      "brand": "Hi-Chew",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "hi_chew",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 309,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0061",
+      "sku": "PQS-0061",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "welch_s",
+      "name": "Welch's Juicefuls",
+      "receipt_name": "WELCH'S JUICEFULS",
+      "description": "Welch's juicefuls fruit snacks.",
+      "brand": "Welch's",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "welch_s",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 269,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0062",
+      "sku": "PQS-0062",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "nerds",
+      "name": "Big Chew Nerds",
+      "receipt_name": "BIG CHEW NERDS",
+      "description": "Big Chew Nerds chewy candy.",
+      "brand": "Nerds",
+      "manufacturer": "Ferrara Candy Company",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "nerds",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 389,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0063",
+      "sku": "PQS-0063",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "twizzlers",
+      "name": "Twizzlers",
+      "receipt_name": "TWIZZLERS",
+      "description": "Twizzlers red licorice twists.",
+      "brand": "Twizzlers",
+      "manufacturer": "The Hershey Company",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "twizzlers",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 409,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0064",
+      "sku": "PQS-0064",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "rips",
+      "name": "Rips",
+      "receipt_name": "RIPS",
+      "description": "Rips fruit-flavored candy strips.",
+      "brand": "Rips",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "rips",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 279,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0065",
+      "sku": "PQS-0065",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "mamba",
+      "name": "Mamba Tropics",
+      "receipt_name": "MAMBA TROPICS",
+      "description": "Mamba Tropics fruit chews.",
+      "brand": "Mamba",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "mamba",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 269,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0066",
+      "sku": "PQS-0066",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "shaqalicious",
+      "name": "Shaqalicious XL Gummies",
+      "receipt_name": "SHAQALICIOUS XL GUMMIES",
+      "description": "Shaqalicious XL gummy candies.",
+      "brand": "Shaqalicious",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "shaqalicious",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 409,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0067",
+      "sku": "PQS-0067",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "air_heads",
+      "name": "Air Heads Bites",
+      "receipt_name": "AIR HEADS BITES",
+      "description": "Air Heads Bites tangy chewy candy.",
+      "brand": "Air Heads",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "air_heads",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 319,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0068",
+      "sku": "PQS-0068",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "haribo",
+      "name": "Haribo Watermelon",
+      "receipt_name": "HARIBO WATERMELON",
+      "description": "Haribo watermelon gummies.",
+      "brand": "Haribo",
+      "manufacturer": "Haribo",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "haribo",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 259,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0069",
+      "sku": "PQS-0069",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "haribo",
+      "name": "Haribo Unicornilicious",
+      "receipt_name": "HARIBO UNICORNILICIOUS",
+      "description": "Haribo unicorn-shaped gummies.",
+      "brand": "Haribo",
+      "manufacturer": "Haribo",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "haribo",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 259,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0070",
+      "sku": "PQS-0070",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "haribo",
+      "name": "Haribo Goldbears",
+      "receipt_name": "HARIBO GOLDBEARS",
+      "description": "Haribo Goldbears gummy bears.",
+      "brand": "Haribo",
+      "manufacturer": "Haribo",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "haribo",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 259,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0071",
+      "sku": "PQS-0071",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "m_m_s",
+      "name": "M&M's",
+      "receipt_name": "M&M'S",
+      "description": "M&M's chocolate candies.",
+      "brand": "M&M's",
+      "manufacturer": "Mars, Incorporated",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "m_m_s",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 439,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0072",
+      "sku": "PQS-0072",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "snickers",
+      "name": "Snickers Minis",
+      "receipt_name": "SNICKERS MINIS",
+      "description": "Snickers mini chocolate bars.",
+      "brand": "Snickers",
+      "manufacturer": "Mars, Incorporated",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "snickers",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 399,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0073",
+      "sku": "PQS-0073",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "hersheys",
+      "name": "Hershey's Kisses",
+      "receipt_name": "HERSHEY'S KISSES",
+      "description": "Hershey's Kisses chocolates.",
+      "brand": "Hershey's",
+      "manufacturer": "The Hershey Company",
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "hershey_s",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 439,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0074",
+      "sku": "PQS-0074",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "lifesavers",
+      "name": "Lifesavers Gummies",
+      "receipt_name": "LIFESAVERS GUMMIES",
+      "description": "Lifesavers fruit gummies.",
+      "brand": "Lifesavers",
+      "manufacturer": null,
+      "category": "snacks",
+      "subcategory": "candy",
+      "tags": [
+        "lifesavers",
+        "candy"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 319,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "grocery_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0075",
+      "sku": "PQS-0075",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "bc",
+      "name": "BC Arthritis Pain Relief",
+      "receipt_name": "BC ARTHRITIS PAIN RELIEF",
+      "description": "BC Arthritis pain relief powder.",
+      "brand": "BC",
+      "manufacturer": null,
+      "category": "health",
+      "subcategory": "otc_medicine",
+      "tags": [
+        "bc",
+        "otc_medicine"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 349,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "otc_medicine"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0076",
+      "sku": "PQS-0076",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "bc",
+      "name": "BC Headache & Bodyache",
+      "receipt_name": "BC HEADACHE & BODYACHE",
+      "description": "BC Headache and bodyache powder.",
+      "brand": "BC",
+      "manufacturer": null,
+      "category": "health",
+      "subcategory": "otc_medicine",
+      "tags": [
+        "bc",
+        "otc_medicine"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "otc_medicine"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0077",
+      "sku": "PQS-0077",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "advil",
+      "name": "Advil Pain Reliever",
+      "receipt_name": "ADVIL PAIN RELIEVER",
+      "description": "Advil ibuprofen pain reliever.",
+      "brand": "Advil",
+      "manufacturer": null,
+      "category": "health",
+      "subcategory": "otc_medicine",
+      "tags": [
+        "advil",
+        "otc_medicine"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 179,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "otc_medicine"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0078",
+      "sku": "PQS-0078",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "alka_seltzer",
+      "name": "Alka-Seltzer",
+      "receipt_name": "ALKA SELTZER",
+      "description": "Alka-Seltzer effervescent tablets.",
+      "brand": "Alka-Seltzer",
+      "manufacturer": null,
+      "category": "health",
+      "subcategory": "otc_medicine",
+      "tags": [
+        "alka_seltzer",
+        "otc_medicine"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "otc_medicine"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0079",
+      "sku": "PQS-0079",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "pepto_bismol",
+      "name": "Pepto Bismol",
+      "receipt_name": "PEPTO BISMOL",
+      "description": "Pepto Bismol liquid for upset stomach.",
+      "brand": "Pepto Bismol",
+      "manufacturer": null,
+      "category": "health",
+      "subcategory": "otc_medicine",
+      "tags": [
+        "pepto_bismol",
+        "otc_medicine"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "otc_medicine"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0080",
+      "sku": "PQS-0080",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "excedrin",
+      "name": "Excedrin Migraine",
+      "receipt_name": "EXCEDRIN MIGRAINE",
+      "description": "Excedrin Migraine pain reliever.",
+      "brand": "Excedrin",
+      "manufacturer": null,
+      "category": "health",
+      "subcategory": "otc_medicine",
+      "tags": [
+        "excedrin",
+        "otc_medicine"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": null,
+        "price_status": "needs_review",
+        "last_updated": null
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "otc_medicine"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "needs_price",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Price not recorded in original notes."
+      }
+    },
+    {
+      "id": "PQS-0081",
+      "sku": "PQS-0081",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "goodys",
+      "name": "Goodys Headache Powder (6-pack)",
+      "receipt_name": "GOODYS HEADACHE POWDER (6 PK)",
+      "description": "Goodys headache powder, 6-pack.",
+      "brand": "Goodys",
+      "manufacturer": null,
+      "category": "health",
+      "subcategory": "otc_medicine",
+      "tags": [
+        "goodys",
+        "otc_medicine"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "6pack",
+        "units_per_pack": 6
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 349,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "otc_medicine"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0082",
+      "sku": "PQS-0082",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "store_brand",
+      "name": "Tissue Single Pack",
+      "receipt_name": "TISSUE PK",
+      "description": "Facial tissue, single pack.",
+      "brand": "Store Brand",
+      "manufacturer": null,
+      "category": "household",
+      "subcategory": "paper_goods",
+      "tags": [
+        "store_brand",
+        "paper_goods"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 139,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "general_merchandise"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0083",
+      "sku": "PQS-0083",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "store_brand",
+      "name": "Hand Wipes Select",
+      "receipt_name": "HAND WIPES SELECT",
+      "description": "Hand wipes, select pack.",
+      "brand": "Store Brand",
+      "manufacturer": null,
+      "category": "household",
+      "subcategory": "wipes",
+      "tags": [
+        "store_brand",
+        "wipes"
+      ],
+      "size": null,
+      "container": "pack",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 299,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "general_merchandise"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": true,
+        "refundable": true,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": false,
+        "review_note": null
+      }
+    },
+    {
+      "id": "PQS-0084",
+      "sku": "PQS-0084",
+      "barcode": null,
+      "barcode_status": "pending",
+      "group_key": "raybens",
+      "name": "Frozen Sandwich - Raybens",
+      "receipt_name": "FROZEN SANDWICH RAYBENS",
+      "description": "Frozen sandwich, brand Raybens.",
+      "brand": "Raybens",
+      "manufacturer": null,
+      "category": "food_service",
+      "subcategory": "frozen_food",
+      "tags": [
+        "raybens",
+        "frozen_food"
+      ],
+      "size": null,
+      "container": "box",
+      "packaging": {
+        "type": "single",
+        "units_per_pack": 1
+      },
+      "image_url": null,
+      "pricing": {
+        "currency": "USD",
+        "unit_price_cents": 399,
+        "price_status": "set",
+        "last_updated": "2026-06-18"
+      },
+      "promotions": [],
+      "tax": {
+        "taxable": true,
+        "tax_category": "prepared_food"
+      },
+      "compliance": {
+        "age_restricted": false,
+        "minimum_age": null,
+        "requires_id_verification": false
+      },
+      "inventory": {
+        "track_inventory": true,
+        "quantity_on_hand": null,
+        "reorder_point": null,
+        "unit_of_measure": "each"
+      },
+      "flags": {
+        "sold_by_volume": false,
+        "weighted": false,
+        "returnable": false,
+        "refundable": false,
+        "eligible_for_coupons": true,
+        "eligible_for_loyalty_points": true,
+        "seasonal": false,
+        "discontinued": false
+      },
+      "status": "active",
+      "metadata": {
+        "source": "owner_handwritten_inventory_notes",
+        "date_added": "2026-06-18",
+        "last_modified": "2026-06-18",
+        "needs_review": true,
+        "review_note": "Product name/spelling may need confirmation ('raybens' from original notes)."
+      }
+    }
+  ]
+}
