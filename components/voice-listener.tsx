@@ -1,10 +1,15 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Product } from '@/lib/types'
-import { formatPrice, productHaystack, normalize } from '@/lib/format'
+import { formatPrice } from '@/lib/format'
 import { Button } from '@/components/ui/button'
 import { Mic, MicOff, X, ImageOff } from 'lucide-react'
+import {
+  buildSearchIndex,
+  searchProducts,
+  isClearCommand,
+} from '@/lib/voice-search'
 
 type VoiceListenerProps = {
   products: Product[]
@@ -31,6 +36,8 @@ function getRecognition(): SpeechRecognitionLike | null {
   return new Ctor() as SpeechRecognitionLike
 }
 
+const LONG_PAUSE_MS = 30000 // 30 seconds of silence before a new utterance resets the search
+
 export function VoiceListener({ products, onPick }: VoiceListenerProps) {
   const [supported, setSupported] = useState(true)
   const [listening, setListening] = useState(false)
@@ -38,44 +45,60 @@ export function VoiceListener({ products, onPick }: VoiceListenerProps) {
   const [matches, setMatches] = useState<Product[]>([])
   const recRef = useRef<SpeechRecognitionLike | null>(null)
   const shouldListen = useRef(false)
+  const pauseTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const longPauseFlag = useRef(false) // becomes true after 30 s of silence
 
+  // Pre‑build the search index once (or when the product list changes)
+  const searchIndex = useMemo(() => buildSearchIndex(products), [products])
+
+  // Cleanup on unmount
   useEffect(() => {
     setSupported(getRecognition() !== null)
     return () => {
       shouldListen.current = false
       recRef.current?.stop()
+      if (pauseTimer.current) clearTimeout(pauseTimer.current)
     }
   }, [])
 
+  /** Run the fuzzy search and update the suggestion list. */
   function findMatches(text: string) {
-    const words = normalize(text)
-    if (!words) return
-    const found: Product[] = []
-    const seen = new Set<string>()
-    for (const p of products) {
-      const name = normalize(p.name)
-      const brand = normalize(p.brand ?? '')
-      const hay = productHaystack(p)
-      // match if the product's brand or a significant name token is spoken
-      const nameTokens = name.split(' ').filter((t) => t.length >= 3)
-      const brandHit = brand.length >= 3 && words.includes(brand)
-      const nameHit =
-        nameTokens.length > 0 &&
-        nameTokens.filter((t) => words.includes(t)).length >=
-          Math.min(2, nameTokens.length)
-      if ((brandHit || nameHit) && !seen.has(p.id)) {
-        seen.add(p.id)
-        found.push(p)
+    if (!text.trim()) {
+      setMatches([])
+      return
+    }
+    // Check for a voice “clear” command
+    if (isClearCommand(text)) {
+      handleClear()
+      return
+    }
+    const results = searchProducts(text, searchIndex, 12)
+    setMatches(results.map((r) => r.product))
+  }
+
+  /** Reset the session and recognition (used for clear command or after a long pause). */
+  function handleClear() {
+    setMatches([])
+    setTranscript('')
+    longPauseFlag.current = false
+    if (pauseTimer.current) clearTimeout(pauseTimer.current)
+    // Stop and restart to reset the continuous recognition’s accumulated text
+    if (recRef.current && shouldListen.current) {
+      recRef.current.stop()
+      // The onend handler will re‑start because shouldListen is still true
+    }
+  }
+
+  /** Schedule a flag that will mark the next utterance as a fresh search. */
+  function resetPauseTimer() {
+    if (pauseTimer.current) clearTimeout(pauseTimer.current)
+    longPauseFlag.current = false
+    pauseTimer.current = setTimeout(() => {
+      // Mark that any future speech should be treated as a new query
+      if (shouldListen.current) {
+        longPauseFlag.current = true
       }
-      if (found.length >= 12) break
-    }
-    if (found.length > 0) {
-      setMatches((prev) => {
-        const byId = new Map(prev.map((p) => [p.id, p]))
-        for (const f of found) byId.set(f.id, f)
-        return Array.from(byId.values()).slice(-12)
-      })
-    }
+    }, LONG_PAUSE_MS)
   }
 
   function start() {
@@ -87,23 +110,36 @@ export function VoiceListener({ products, onPick }: VoiceListenerProps) {
     rec.continuous = true
     rec.interimResults = true
     rec.lang = 'en-US'
+
     rec.onresult = (e: any) => {
       let text = ''
       for (let i = e.resultIndex; i < e.results.length; i++) {
         text += e.results[i][0].transcript + ' '
       }
-      setTranscript(text.trim())
-      // detect "clear" command
-      if (/\b(clear|reset|start over)\b/i.test(text)) {
-        setMatches([])
-        setTranscript('')
+      const trimmed = text.trim()
+
+      // If a long pause had occurred, treat this as a brand‑new utterance
+      if (longPauseFlag.current && trimmed.length > 0) {
+        longPauseFlag.current = false
+        // Save the text, then restart the recognition to clear its buffer
+        handleClear()
+        // After the clear (which resets transcript/matches), inject the new text
+        setTranscript(trimmed)
+        findMatches(trimmed)
+        resetPauseTimer()
         return
       }
-      findMatches(text)
+
+      // Normal update – refine the same search
+      setTranscript(trimmed)
+      findMatches(trimmed)
+      resetPauseTimer()
     }
+
     rec.onerror = () => {
       /* ignore transient errors */
     }
+
     rec.onend = () => {
       if (shouldListen.current) {
         try {
@@ -115,6 +151,7 @@ export function VoiceListener({ products, onPick }: VoiceListenerProps) {
         setListening(false)
       }
     }
+
     recRef.current = rec
     shouldListen.current = true
     try {
@@ -129,6 +166,8 @@ export function VoiceListener({ products, onPick }: VoiceListenerProps) {
     shouldListen.current = false
     recRef.current?.stop()
     setListening(false)
+    if (pauseTimer.current) clearTimeout(pauseTimer.current)
+    longPauseFlag.current = false
   }
 
   if (!supported) {
@@ -170,6 +209,8 @@ export function VoiceListener({ products, onPick }: VoiceListenerProps) {
               onClick={() => {
                 setMatches([])
                 setTranscript('')
+                if (pauseTimer.current) clearTimeout(pauseTimer.current)
+                longPauseFlag.current = false
               }}
             >
               <X className="mr-1 h-3.5 w-3.5" /> Clear
