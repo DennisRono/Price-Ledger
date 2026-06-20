@@ -84,7 +84,19 @@ export async function addCategoryReq(
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(category),
   })
-  if (!res.ok) throw new Error('Failed to add category')
+
+  if (!res.ok) {
+    // Try to parse the error message from the server
+    let errorMsg = 'Failed to add category'
+    try {
+      const data = await res.json()
+      if (data.error) errorMsg = data.error
+    } catch {
+      // fallback to default
+    }
+    throw new Error(errorMsg)
+  }
+
   const data = await res.json()
   return data.category
 }

@@ -2,7 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { Product } from '@/lib/types'
-import { formatPrice, formatSize, productHaystack, scoreProduct } from '@/lib/format'
+import {
+  formatPrice,
+  formatSize,
+  productHaystack,
+  scoreProduct,
+} from '@/lib/format'
 import { Search, X, ImageOff } from 'lucide-react'
 
 type SearchBarProps = {
@@ -12,7 +17,12 @@ type SearchBarProps = {
   onSelect: (product: Product) => void
 }
 
-export function SearchBar({ products, value, onValueChange, onSelect }: SearchBarProps) {
+export function SearchBar({
+  products,
+  value,
+  onValueChange,
+  onSelect,
+}: SearchBarProps) {
   const [open, setOpen] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -40,7 +50,10 @@ export function SearchBar({ products, value, onValueChange, onSelect }: SearchBa
 
   useEffect(() => {
     function onClick(e: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(e.target as Node)
+      ) {
         setOpen(false)
       }
     }
@@ -104,46 +117,68 @@ export function SearchBar({ products, value, onValueChange, onSelect }: SearchBa
 
       {open && value.trim() && results.length > 0 ? (
         <ul className="absolute z-50 mt-1 max-h-[60vh] w-full overflow-auto border-2 border-ink bg-card shadow-[4px_4px_0_0_var(--ink)]">
-          {results.map((p, i) => (
-            <li key={p.id}>
-              <button
-                type="button"
-                onMouseEnter={() => setActiveIndex(i)}
-                onClick={() => {
-                  onSelect(p)
-                  setOpen(false)
-                }}
-                className={`flex w-full items-center gap-3 border-b border-ink/10 px-3 py-2 text-left ${
-                  i === activeIndex ? 'bg-parchment' : 'bg-card'
-                }`}
-              >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden border border-ink/15 bg-parchment">
-                  {p.image_url ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={p.image_url || '/placeholder.svg'}
-                      alt=""
-                      className="h-full w-full object-contain mix-blend-multiply"
-                      crossOrigin="anonymous"
-                    />
-                  ) : (
-                    <ImageOff className="h-4 w-4 text-muted-foreground" />
-                  )}
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block truncate text-sm font-semibold text-ink">
-                    {p.name}
+          {results.map((p, i) => {
+            const activePromotions =
+              p.promotions?.filter((pr: any) => pr.active) ?? []
+            const promotionLabels = activePromotions
+              .map((pr: any) => pr.label)
+              .join(', ')
+
+            return (
+              <li key={p.id}>
+                <button
+                  type="button"
+                  onMouseEnter={() => setActiveIndex(i)}
+                  onClick={() => {
+                    onSelect(p)
+                    setOpen(false)
+                  }}
+                  className={`flex w-full items-center gap-3 border-b border-ink/10 px-3 py-2 text-left ${
+                    i === activeIndex ? 'bg-parchment' : 'bg-card'
+                  }`}
+                >
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden border border-ink/15 bg-parchment">
+                    {p.image_url ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={p.image_url || '/placeholder.svg'}
+                        alt=""
+                        className="h-full w-full object-contain mix-blend-multiply"
+                        crossOrigin="anonymous"
+                      />
+                    ) : (
+                      <ImageOff className="h-4 w-4 text-muted-foreground" />
+                    )}
                   </span>
-                  <span className="block truncate text-xs text-muted-foreground">
-                    {[p.brand, formatSize(p)].filter(Boolean).join(' · ')}
+
+                  {/* Product info */}
+                  <span className="min-w-0 flex-1">
+                    <span className="block truncate text-sm font-semibold text-ink">
+                      {p.name}
+                    </span>
+                    <span className="block truncate text-xs text-muted-foreground">
+                      {[p.brand, formatSize(p)].filter(Boolean).join(' · ')}
+                    </span>
                   </span>
-                </span>
-                <span className="font-heading shrink-0 text-base font-black text-red">
-                  {formatPrice(p.pricing?.unit_price_cents, p.pricing?.currency)}
-                </span>
-              </button>
-            </li>
-          ))}
+
+                  {/* Price + Promotion */}
+                  <span className="flex shrink-0 flex-col items-end">
+                    <span className="font-heading text-base font-black text-red">
+                      {formatPrice(
+                        p.pricing?.unit_price_cents,
+                        p.pricing?.currency,
+                      )}
+                    </span>
+                    {promotionLabels && (
+                      <span className="text-xs font-medium text-green-600">
+                        {promotionLabels}
+                      </span>
+                    )}
+                  </span>
+                </button>
+              </li>
+            )
+          })}
         </ul>
       ) : null}
 

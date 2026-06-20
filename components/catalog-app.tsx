@@ -452,8 +452,9 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
                     toast.success('Category added')
                     refresh()
                     setCategoryDialogOpen(false)
-                  } catch {
-                    toast.error('Failed to add category')
+                  } catch (err: any) {
+                    // Display the specific error message from the backend
+                    toast.error(err.message || 'Failed to add category')
                   } finally {
                     setIsAddingCategory(false)
                   }

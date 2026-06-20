@@ -14,14 +14,39 @@ export async function POST(
 
   const body = await request.json()
   const { name, parentId } = body
-  if (!name?.trim()) {
-    return NextResponse.json({ error: 'Category name required' }, { status: 400 })
+
+  // Validate name
+  const trimmedName = name?.trim()
+  if (!trimmedName) {
+    return NextResponse.json(
+      { error: 'Category name is required' },
+      { status: 400 }
+    )
   }
 
+  // Normalise parentId: null for top‑level
+  const normalisedParentId = parentId || null
+
+  // --- Duplicate check ---
+  // Case‑insensitive check within the same parent
+  const exists = catalog.categories.some(
+    (c) =>
+      c.name.toLowerCase() === trimmedName.toLowerCase() &&
+      c.parentId === normalisedParentId
+  )
+
+  if (exists) {
+    return NextResponse.json(
+      { error: 'A category with this name already exists under the same parent' },
+      { status: 409 } // Conflict
+    )
+  }
+
+  // Create and save the new category
   const newCategory: Category = {
     id: `cat_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-    name: name.trim(),
-    parentId: parentId || null,
+    name: trimmedName,
+    parentId: normalisedParentId,
   }
 
   catalog.categories.push(newCategory)
