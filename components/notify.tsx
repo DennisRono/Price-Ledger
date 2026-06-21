@@ -77,6 +77,7 @@ const TONE_ICON: Record<ToastTone, React.ElementType> = {
   warn: AlertTriangle,
   error: AlertCircle,
   info: Info,
+  default: Info
 }
 
 const TONE_CLASSES: Record<ToastTone, string> = {
