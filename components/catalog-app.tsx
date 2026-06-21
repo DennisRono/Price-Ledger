@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import useSWR, { useSWRConfig } from 'swr'
 import type { Product, StoreCatalog, StoreMeta } from '@/lib/types'
 import {
@@ -34,10 +34,32 @@ type CatalogAppProps = {
   initialStores: StoreMeta[]
 }
 
+const STORE_ID_STORAGE_KEY = 'price-ledger-active-store-id'
+
 export function CatalogApp({ initialStores }: CatalogAppProps) {
   const { mutate } = useSWRConfig()
   const [stores, setStores] = useState<StoreMeta[]>(initialStores)
-  const [activeStoreId, setActiveStoreId] = useState(initialStores[0]?.id ?? '')
+
+  // ---- Persist active store ID in localStorage ----
+  const [activeStoreId, setActiveStoreId] = useState(() => {
+    if (typeof window === 'undefined') return initialStores[0]?.id ?? ''
+    const stored = localStorage.getItem(STORE_ID_STORAGE_KEY)
+    // Only use stored value if it exists in the current store list
+    if (stored && initialStores.some((s) => s.id === stored)) {
+      return stored
+    }
+    return initialStores[0]?.id ?? ''
+  })
+
+  // Sync to localStorage whenever activeStoreId changes
+  useEffect(() => {
+    if (typeof window !== 'undefined' && activeStoreId) {
+      localStorage.setItem(STORE_ID_STORAGE_KEY, activeStoreId)
+    }
+  }, [activeStoreId])
+
+  // ---- End persistence ----
+
   const [categoryDialogOpen, setCategoryDialogOpen] = useState(false)
   const [newCategoryName, setNewCategoryName] = useState('')
   const [newCategoryParent, setNewCategoryParent] = useState('')
@@ -117,10 +139,8 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
               (a.pricing?.unit_price_cents ?? -Infinity)
             )
           case 'recent':
-            return (
-              (b.metadata?.last_modified ?? '').localeCompare(
-                a.metadata?.last_modified ?? '',
-              )
+            return (b.metadata?.last_modified ?? '').localeCompare(
+              a.metadata?.last_modified ?? '',
             )
           default:
             return a.name.localeCompare(b.name)
@@ -142,7 +162,9 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
         toast.success('Product added to catalog')
         setStores((prev) =>
           prev.map((s) =>
-            s.id === activeStoreId ? { ...s, productCount: s.productCount + 1 } : s,
+            s.id === activeStoreId
+              ? { ...s, productCount: s.productCount + 1 }
+              : s,
           ),
         )
       } else {
@@ -196,7 +218,11 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
         last_updated: today,
       },
       status: 'active',
-      metadata: { source: 'manual_entry', date_added: today, last_modified: today },
+      metadata: {
+        source: 'manual_entry',
+        date_added: today,
+        last_modified: today,
+      },
     }
     setEditorState({ mode: 'create', product: base })
   }
@@ -215,7 +241,8 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
       toast.success(`Found: ${existing.name}`)
     } else {
       toast.message('No product with that barcode', {
-        description: 'Search to link it to an existing item, or add a new product.',
+        description:
+          'Search to link it to an existing item, or add a new product.',
       })
       setQuery('')
       openCreate({ barcode: code })
@@ -230,7 +257,11 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
   return (
     <div className="min-h-screen">
       <Masthead
-        storeName={catalog?.store ?? stores.find((s) => s.id === activeStoreId)?.name ?? '—'}
+        storeName={
+          catalog?.store ??
+          stores.find((s) => s.id === activeStoreId)?.name ??
+          '—'
+        }
         productCount={products.length}
       />
 
@@ -302,7 +333,10 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
           />
 
           {voiceOpen ? (
-            <VoiceListener products={products} onPick={(p) => setDetailProduct(p)} />
+            <VoiceListener
+              products={products}
+              onPick={(p) => setDetailProduct(p)}
+            />
           ) : null}
 
           <FilterBar
@@ -327,7 +361,8 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
 
       <footer className="ed-double-rule mt-8 px-4 py-6 text-center">
         <p className="ed-kicker text-[10px] text-muted-foreground">
-          The Price Ledger — Data stored in Vercel Blob — {products.length} items on file
+          The Price Ledger — Data stored in Vercel Blob — {products.length}{' '}
+          items on file
         </p>
       </footer>
 
@@ -366,7 +401,7 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
         }}
         onCreated={(store) => {
           setStores((prev) => [...prev, store])
-          setActiveStoreId(store.id)
+          setActiveStoreId(store.id) // automatically saved by useEffect
         }}
       />
 
@@ -374,7 +409,9 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
       <Dialog open={scanOpen} onOpenChange={setScanOpen}>
         <DialogContent className="rounded-none border-2 border-ink bg-paper p-0 sm:max-w-md">
           <DialogHeader className="border-b-2 border-ink bg-ink px-4 py-3 text-left">
-            <DialogTitle className="font-heading text-paper">Scan Barcode</DialogTitle>
+            <DialogTitle className="font-heading text-paper">
+              Scan Barcode
+            </DialogTitle>
           </DialogHeader>
           <div className="p-4">
             {scanOpen ? (
@@ -391,11 +428,16 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
       <Dialog open={categoryDialogOpen} onOpenChange={setCategoryDialogOpen}>
         <DialogContent className="rounded-none border-2 border-ink bg-paper p-0 sm:max-w-md">
           <DialogHeader className="border-b-2 border-ink bg-ink px-4 py-3 text-left">
-            <DialogTitle className="font-heading text-paper">Add Category</DialogTitle>
+            <DialogTitle className="font-heading text-paper">
+              Add Category
+            </DialogTitle>
           </DialogHeader>
           <div className="space-y-4 p-4">
             <div>
-              <label htmlFor="categoryName" className="block text-sm font-medium">
+              <label
+                htmlFor="categoryName"
+                className="block text-sm font-medium"
+              >
                 Category Name
               </label>
               <input
@@ -408,7 +450,10 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
               />
             </div>
             <div>
-              <label htmlFor="parentCategory" className="block text-sm font-medium">
+              <label
+                htmlFor="parentCategory"
+                className="block text-sm font-medium"
+              >
                 Parent Category (optional)
               </label>
               <select
@@ -453,7 +498,6 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
                     refresh()
                     setCategoryDialogOpen(false)
                   } catch (err: any) {
-                    // Display the specific error message from the backend
                     toast.error(err.message || 'Failed to add category')
                   } finally {
                     setIsAddingCategory(false)
