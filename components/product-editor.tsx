@@ -265,6 +265,8 @@ export function ProductEditor({
   }
 
   const topLevel = categories.filter((c) => c.parentId === null)
+
+  const selectedCategory = topLevel.find((c) => c.id === draft.category)
   const subs = categories.filter((c) => c.parentId === draft.category)
 
   return (
@@ -405,8 +407,11 @@ export function ProductEditor({
                   onValueChange={(v) => update({ category: v ?? '' })}
                 >
                   <SelectTrigger className="rounded-none border-ink bg-card">
-                    <SelectValue placeholder="Choose category" />
+                    <SelectValue placeholder="Choose category">
+                      {selectedCategory?.name}
+                    </SelectValue>
                   </SelectTrigger>
+
                   <SelectContent>
                     {topLevel.map((c) => (
                       <SelectItem key={c.id} value={c.id}>
