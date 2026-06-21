@@ -30,9 +30,16 @@ type FilterBarProps = {
   filters: Filters
   onChange: (f: Filters) => void
   resultCount: number
+  hideMissingFilters?: boolean
 }
 
-export function FilterBar({ categories, filters, onChange, resultCount }: FilterBarProps) {
+export function FilterBar({
+  categories,
+  filters,
+  onChange,
+  resultCount,
+  hideMissingFilters = false,
+}: FilterBarProps) {
   const topLevel = categories.filter((c) => c.parentId === null)
   const subByParent = (parentId: string) =>
     categories.filter((c) => c.parentId === parentId)
@@ -48,13 +55,17 @@ export function FilterBar({ categories, filters, onChange, resultCount }: Filter
           value={filters.category}
           onValueChange={(v) => onChange({ ...filters, category: v ?? 'all' })}
         >
-          <SelectTrigger className="rounded-none border-ink bg-card font-medium">
+          <SelectTrigger className="w-full rounded-none border-ink bg-card font-medium">
             <SelectValue placeholder="Category" />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">All categories</SelectItem>
             {topLevel.map((cat) => (
-              <SelectGroupItems key={cat.id} cat={cat} subs={subByParent(cat.id)} />
+              <SelectGroupItems
+                key={cat.id}
+                cat={cat}
+                subs={subByParent(cat.id)}
+              />
             ))}
           </SelectContent>
         </Select>
@@ -63,7 +74,7 @@ export function FilterBar({ categories, filters, onChange, resultCount }: Filter
           value={filters.packaging}
           onValueChange={(v) => onChange({ ...filters, packaging: v ?? 'all' })}
         >
-          <SelectTrigger className="rounded-none border-ink bg-card font-medium">
+          <SelectTrigger className="w-full rounded-none border-ink bg-card font-medium">
             <SelectValue placeholder="Pack size" />
           </SelectTrigger>
           <SelectContent>
@@ -77,7 +88,7 @@ export function FilterBar({ categories, filters, onChange, resultCount }: Filter
           value={filters.sort}
           onValueChange={(v) => onChange({ ...filters, sort: v ?? 'name' })}
         >
-          <SelectTrigger className="rounded-none border-ink bg-card font-medium">
+          <SelectTrigger className="w-full rounded-none border-ink bg-card font-medium">
             <SelectValue placeholder="Sort" />
           </SelectTrigger>
           <SelectContent>
@@ -91,18 +102,22 @@ export function FilterBar({ categories, filters, onChange, resultCount }: Filter
 
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap gap-2">
-          <FilterChip
-            active={filters.onlyMissingPrice}
-            onClick={() => toggle('onlyMissingPrice')}
-          >
-            Needs price
-          </FilterChip>
-          <FilterChip
-            active={filters.onlyMissingImage}
-            onClick={() => toggle('onlyMissingImage')}
-          >
-            Needs photo
-          </FilterChip>
+          {!hideMissingFilters && (
+            <>
+              <FilterChip
+                active={filters.onlyMissingPrice}
+                onClick={() => toggle('onlyMissingPrice')}
+              >
+                Needs price
+              </FilterChip>
+              <FilterChip
+                active={filters.onlyMissingImage}
+                onClick={() => toggle('onlyMissingImage')}
+              >
+                Needs photo
+              </FilterChip>
+            </>
+          )}
         </div>
         <span className="ed-kicker text-[10px] text-muted-foreground">
           {resultCount} {resultCount === 1 ? 'item' : 'items'}

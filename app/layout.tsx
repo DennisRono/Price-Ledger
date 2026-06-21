@@ -44,6 +44,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${playfair.variable} ${plexSans.variable} ${plexMono.variable}`}
+      suppressHydrationWarning
     >
       <body className="bg-background font-sans antialiased">
         {children}

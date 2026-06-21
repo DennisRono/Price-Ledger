@@ -15,6 +15,8 @@ type SearchBarProps = {
   value: string
   onValueChange: (v: string) => void
   onSelect: (product: Product) => void
+  className?: string
+  posMode?: boolean
 }
 
 export function SearchBar({
@@ -22,6 +24,8 @@ export function SearchBar({
   value,
   onValueChange,
   onSelect,
+  className,
+  posMode = false
 }: SearchBarProps) {
   const [open, setOpen] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -82,7 +86,7 @@ export function SearchBar({
   }
 
   return (
-    <div ref={containerRef} className="relative w-full">
+    <div ref={containerRef} className={`"relative w-full " ${className}`}>
       <div className="flex items-center gap-2 border-2 border-ink bg-card px-3 py-2.5 shadow-[3px_3px_0_0_var(--ink)]">
         <Search className="h-5 w-5 shrink-0 text-ink" />
         <input
@@ -115,7 +119,7 @@ export function SearchBar({
         ) : null}
       </div>
 
-      {open && value.trim() && results.length > 0 ? (
+      {!posMode && open && value.trim() && results.length > 0 ? (
         <ul className="absolute z-50 mt-1 max-h-[60vh] w-full overflow-auto border-2 border-ink bg-card shadow-[4px_4px_0_0_var(--ink)]">
           {results.map((p, i) => {
             const activePromotions =
@@ -182,7 +186,7 @@ export function SearchBar({
         </ul>
       ) : null}
 
-      {open && value.trim() && results.length === 0 ? (
+      {!posMode && open && value.trim() && results.length === 0 ? (
         <div className="absolute z-50 mt-1 w-full border-2 border-ink bg-card px-3 py-4 text-center text-sm text-muted-foreground shadow-[4px_4px_0_0_var(--ink)]">
           No products match “{value}”.
         </div>

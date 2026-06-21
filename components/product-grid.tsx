@@ -6,9 +6,14 @@ import { ProductCard } from './product-card'
 type ProductGridProps = {
   products: Product[]
   onEdit: (product: Product) => void
+  posMode?: boolean
 }
 
-export function ProductGrid({ products, onEdit }: ProductGridProps) {
+export function ProductGrid({
+  products,
+  onEdit,
+  posMode = false,
+}: ProductGridProps) {
   if (products.length === 0) {
     return (
       <div className="border-2 border-dashed border-ink/30 bg-card px-6 py-16 text-center">
@@ -21,7 +26,9 @@ export function ProductGrid({ products, onEdit }: ProductGridProps) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+    <div
+      className={`grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5`}
+    >
       {products.map((p) => (
         <ProductCard key={p.id} product={p} onEdit={onEdit} />
       ))}

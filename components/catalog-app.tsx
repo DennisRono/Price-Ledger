@@ -32,33 +32,32 @@ import { toast } from 'sonner'
 
 type CatalogAppProps = {
   initialStores: StoreMeta[]
+  posMode?: boolean
 }
 
 const STORE_ID_STORAGE_KEY = 'price-ledger-active-store-id'
 
-export function CatalogApp({ initialStores }: CatalogAppProps) {
+export function CatalogApp({
+  initialStores,
+  posMode = false,
+}: CatalogAppProps) {
   const { mutate } = useSWRConfig()
   const [stores, setStores] = useState<StoreMeta[]>(initialStores)
 
-  // ---- Persist active store ID in localStorage ----
   const [activeStoreId, setActiveStoreId] = useState(() => {
     if (typeof window === 'undefined') return initialStores[0]?.id ?? ''
     const stored = localStorage.getItem(STORE_ID_STORAGE_KEY)
-    // Only use stored value if it exists in the current store list
     if (stored && initialStores.some((s) => s.id === stored)) {
       return stored
     }
     return initialStores[0]?.id ?? ''
   })
 
-  // Sync to localStorage whenever activeStoreId changes
   useEffect(() => {
     if (typeof window !== 'undefined' && activeStoreId) {
       localStorage.setItem(STORE_ID_STORAGE_KEY, activeStoreId)
     }
   }, [activeStoreId])
-
-  // ---- End persistence ----
 
   const [categoryDialogOpen, setCategoryDialogOpen] = useState(false)
   const [newCategoryName, setNewCategoryName] = useState('')
@@ -87,7 +86,6 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
   const categories = catalog?.categories ?? []
   const taxCategories = catalog?.tax_categories ?? []
 
-  // category descendants helper (so picking a parent shows children too)
   const categoryMatches = useMemo(() => {
     if (filters.category === 'all') return null
     const ids = new Set<string>([filters.category])
@@ -255,83 +253,128 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
   }
 
   return (
-    <div className="min-h-screen">
-      <Masthead
-        storeName={
-          catalog?.store ??
-          stores.find((s) => s.id === activeStoreId)?.name ??
-          '—'
-        }
-        productCount={products.length}
-      />
+    // Root container: in POS mode, take full height and use flex column
+    <div className={posMode ? 'h-full flex flex-col' : 'min-h-screen'}>
+      {/* Masthead – hidden in POS mode */}
+      {!posMode && (
+        <Masthead
+          storeName={
+            catalog?.store ??
+            stores.find((s) => s.id === activeStoreId)?.name ??
+            '—'
+          }
+          productCount={products.length}
+        />
+      )}
 
-      {/* Toolbar */}
-      <div className="sticky top-0 z-40 border-b-2 border-ink bg-paper/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center gap-2 px-3 py-2">
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            className="rounded-none border-ink"
-            onClick={() => setStoreManagerOpen(true)}
-          >
-            <Store className="h-4 w-4 sm:mr-1.5" />
-            <span className="hidden sm:inline">Stores</span>
-          </Button>
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            className="rounded-none border-ink"
-            onClick={() => setScanOpen(true)}
-          >
-            <ScanBarcode className="h-4 w-4 sm:mr-1.5" />
-            <span className="hidden sm:inline">Scan</span>
-          </Button>
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            className={`rounded-none border-ink ${voiceOpen ? 'bg-ink text-paper' : ''}`}
-            onClick={() => setVoiceOpen((v) => !v)}
-          >
-            <Mic className="h-4 w-4 sm:mr-1.5" />
-            <span className="hidden sm:inline">Listen</span>
-          </Button>
-
-          {/* Grouped Add buttons */}
-          <div className="ml-auto flex items-center gap-2">
+      {/* Toolbar – hidden in POS mode */}
+      {!posMode && (
+        <div className="sticky top-0 z-40 border-b-2 border-ink bg-paper/95 backdrop-blur">
+          <div className="mx-auto flex max-w-6xl items-center gap-2 px-3 py-2">
             <Button
               type="button"
+              variant="outline"
               size="sm"
-              className="rounded-none bg-red text-paper hover:bg-red/90"
-              onClick={openAddCategory}
+              className="rounded-none border-ink"
+              onClick={() => setStoreManagerOpen(true)}
             >
-              <Plus className="h-4 w-4 sm:mr-1.5" />
-              <span className="hidden sm:inline">Add Category</span>
+              <Store className="h-4 w-4 sm:mr-1.5" />
+              <span className="hidden sm:inline">Stores</span>
             </Button>
-            <Button
-              type="button"
-              size="sm"
-              className="rounded-none bg-red text-paper hover:bg-red/90"
-              onClick={() => openCreate()}
-            >
-              <Plus className="h-4 w-4 sm:mr-1.5" />
-              <span className="hidden sm:inline">Add product</span>
-            </Button>
+
+            {!posMode && (
+              <>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="rounded-none border-ink"
+                  onClick={() => setScanOpen(true)}
+                >
+                  <ScanBarcode className="h-4 w-4 sm:mr-1.5" />
+                  <span className="hidden sm:inline">Scan</span>
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className={`rounded-none border-ink ${voiceOpen ? 'bg-ink text-paper' : ''}`}
+                  onClick={() => setVoiceOpen((v) => !v)}
+                >
+                  <Mic className="h-4 w-4 sm:mr-1.5" />
+                  <span className="hidden sm:inline">Listen</span>
+                </Button>
+              </>
+            )}
+
+            <div className="ml-auto flex items-center gap-2">
+              <Button
+                type="button"
+                size="sm"
+                className="rounded-none bg-red text-paper hover:bg-red/90"
+                onClick={openAddCategory}
+              >
+                <Plus className="h-4 w-4 sm:mr-1.5" />
+                <span className="hidden sm:inline">Add Category</span>
+              </Button>
+              <Button
+                type="button"
+                size="sm"
+                className="rounded-none bg-red text-paper hover:bg-red/90"
+                onClick={() => openCreate()}
+              >
+                <Plus className="h-4 w-4 sm:mr-1.5" />
+                <span className="hidden sm:inline">Add product</span>
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <main className="mx-auto max-w-6xl px-3 py-4 sm:py-6">
-        <div className="flex flex-col gap-4">
-          <SearchBar
-            products={products}
-            value={query}
-            onValueChange={setQuery}
-            onSelect={(p) => setDetailProduct(p)}
-          />
+      {/* Main content – takes remaining height and uses flex column */}
+      <main
+        className={`mx-auto max-w-6xl px-3 flex-1 flex flex-col min-h-0 ${
+          !posMode && 'py-4 sm:py-6'
+        } ${posMode && "w-full!"}`}
+      >
+        <div className="flex flex-col gap-4 flex-1 min-h-0">
+          {/* Search bar */}
+          <div className="flex items-center gap-2">
+            <SearchBar
+              products={products}
+              value={query}
+              onValueChange={setQuery}
+              onSelect={(p) => setDetailProduct(p)}
+              className="flex-1"
+              posMode={posMode}
+            />
+            {posMode && (
+              <>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="rounded-none border-ink shrink-0 p-5"
+                  onClick={() => setScanOpen(true)}
+                >
+                  <ScanBarcode className="h-4 w-4" />
+                  <span className="sr-only">Scan</span>
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className={`rounded-none border-ink shrink-0 p-5 ${voiceOpen ? 'bg-ink text-paper' : ''}`}
+                  onClick={() => setVoiceOpen((v) => !v)}
+                >
+                  <Mic className="h-4 w-4" />
+                  <span className="sr-only">Listen</span>
+                </Button>
+              </>
+            )}
+          </div>
 
+          {/* Voice listener */}
           {voiceOpen ? (
             <VoiceListener
               products={products}
@@ -339,41 +382,49 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
             />
           ) : null}
 
+          {/* Filter bar */}
           <FilterBar
             categories={categories}
             filters={filters}
             onChange={setFilters}
             resultCount={filtered.length}
+            hideMissingFilters={posMode}
           />
 
+          {/* Product grid – scrollable */}
           {isLoading ? (
             <div className="py-16 text-center text-muted-foreground">
               <p className="ed-kicker text-xs">Loading catalog…</p>
             </div>
           ) : (
-            <ProductGrid
-              products={filtered}
-              onEdit={(p) => setEditorState({ mode: 'edit', product: p })}
-            />
+            <div className="flex-1 overflow-auto no-scrollbar">
+              <ProductGrid
+                products={filtered}
+                onEdit={(p) => setEditorState({ mode: 'edit', product: p })}
+                posMode={posMode}
+              />
+            </div>
           )}
         </div>
       </main>
 
-      <footer className="ed-double-rule mt-8 px-4 py-6 text-center">
-        <p className="ed-kicker text-[10px] text-muted-foreground">
-          The Price Ledger — Data stored in Vercel Blob — {products.length}{' '}
-          items on file
-        </p>
-      </footer>
+      {/* Footer – hidden in POS mode */}
+      {!posMode && (
+        <footer className="ed-double-rule mt-8 px-4 py-6 text-center">
+          <p className="ed-kicker text-[10px] text-muted-foreground">
+            The Price Ledger — Data stored in Vercel Blob — {products.length}{' '}
+            items on file
+          </p>
+        </footer>
+      )}
 
-      {/* Detail / quick price view */}
+      {/* Dialogs and overlays (unchanged) */}
       <ProductDetail
         product={detailProduct}
         onClose={() => setDetailProduct(null)}
         onEdit={handleEditFromDetail}
       />
 
-      {/* Editor */}
       {editorState ? (
         <ProductEditor
           open={!!editorState}
@@ -388,7 +439,6 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
         />
       ) : null}
 
-      {/* Store manager */}
       <StoreManager
         open={storeManagerOpen}
         stores={stores}
@@ -401,11 +451,10 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
         }}
         onCreated={(store) => {
           setStores((prev) => [...prev, store])
-          setActiveStoreId(store.id) // automatically saved by useEffect
+          setActiveStoreId(store.id)
         }}
       />
 
-      {/* Standalone scanner */}
       <Dialog open={scanOpen} onOpenChange={setScanOpen}>
         <DialogContent className="rounded-none border-2 border-ink bg-paper p-0 sm:max-w-md">
           <DialogHeader className="border-b-2 border-ink bg-ink px-4 py-3 text-left">
@@ -424,7 +473,6 @@ export function CatalogApp({ initialStores }: CatalogAppProps) {
         </DialogContent>
       </Dialog>
 
-      {/* Add Category Dialog */}
       <Dialog open={categoryDialogOpen} onOpenChange={setCategoryDialogOpen}>
         <DialogContent className="rounded-none border-2 border-ink bg-paper p-0 sm:max-w-md">
           <DialogHeader className="border-b-2 border-ink bg-ink px-4 py-3 text-left">

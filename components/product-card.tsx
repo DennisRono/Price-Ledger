@@ -18,17 +18,17 @@ export function ProductCard({ product, onEdit }: ProductCardProps) {
     product.pricing?.unit_price_cents === undefined
 
   return (
-    <article className="group relative flex flex-col border border-ink/15 bg-card transition-colors hover:border-ink">
+    <article className="group relative flex flex-col border border-border bg-card transition-colors hover:border-foreground/20">
       <button
         type="button"
         onClick={() => onEdit(product)}
-        className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center border border-ink/20 bg-paper text-ink opacity-0 transition-opacity hover:bg-ink hover:text-paper group-hover:opacity-100 focus:opacity-100"
+        className="absolute right-2 top-2 z-10 flex h-8 w-8 items-center justify-center border border-border bg-background text-foreground opacity-0 transition-opacity hover:bg-foreground hover:text-background group-hover:opacity-100 focus:opacity-100"
         aria-label={`Edit ${product.name}`}
       >
         <Pencil className="h-4 w-4" />
       </button>
 
-      <div className="flex aspect-square items-center justify-center overflow-hidden border-b border-ink/15 bg-parchment">
+      <div className="flex aspect-square items-center justify-center overflow-hidden border-b border-border bg-muted/30">
         {product.image_url ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -48,25 +48,30 @@ export function ProductCard({ product, onEdit }: ProductCardProps) {
 
       <div className="flex flex-1 flex-col gap-1.5 p-3">
         {product.brand ? (
-          <p className="ed-kicker text-[9px] text-red">{product.brand}</p>
+          <p className="ed-kicker text-[9px] text-red-600 dark:text-red-400">
+            {product.brand}
+          </p>
         ) : null}
-        <h3 className="font-heading text-sm font-bold leading-tight text-pretty">
+        <h3 className="font-heading text-sm font-bold leading-tight text-pretty text-foreground">
           {product.name}
         </h3>
         {size ? <p className="text-xs text-muted-foreground">{size}</p> : null}
 
         <div className="mt-auto flex items-end justify-between pt-2">
-          <span className="font-heading text-xl font-black text-ink">
-            {formatPrice(product.pricing?.unit_price_cents, product.pricing?.currency)}
+          <span className="font-heading text-xl font-black text-foreground">
+            {formatPrice(
+              product.pricing?.unit_price_cents,
+              product.pricing?.currency,
+            )}
           </span>
           <div className="flex flex-col items-end gap-1">
             {needsPrice ? (
-              <Badge className="bg-red text-paper text-[9px] uppercase">
+              <Badge className="bg-red-600 text-white text-[9px] uppercase">
                 Set price
               </Badge>
             ) : null}
             {needsImage ? (
-              <span className="ed-kicker flex items-center gap-1 text-[8px] text-gold">
+              <span className="ed-kicker flex items-center gap-1 text-[8px] text-amber-600 dark:text-amber-400">
                 <AlertTriangle className="h-3 w-3" /> Add photo
               </span>
             ) : null}
