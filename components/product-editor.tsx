@@ -269,11 +269,21 @@ export function ProductEditor({
 
   return (
     <Dialog open={open} onOpenChange={(o) => !o && onClose()}>
-      <DialogContent className="max-h-[96vh] max-w-7xl md:min-w-max gap-0 overflow-y-auto overflow-x-hidden rounded-none border-2 border-ink bg-paper p-0 sm:rounded-lg">
-        <DialogHeader className="border-b-2 border-ink bg-ink px-4 py-3 text-left border-t-2 border-t-white">
+      <DialogContent className="max-h-[96vh] max-w-7xl md:min-w-max gap-0 overflow-y-auto overflow-x-hidden rounded-none border-2 border-ink bg-paper p-0 sm:rounded-lg mt-14 sm:mt-0">
+        <DialogHeader className="relative border-b-2 border-ink border-t-2 bg-ink px-4 py-3 text-left">
+          <button
+            type="button"
+            onClick={onClose}
+            className="absolute right-3 top-3 text-paper transition-opacity hover:opacity-70 cursor-pointer"
+            aria-label="Close dialog"
+          >
+            <X className="h-5 w-5" />
+          </button>
+
           <DialogTitle className="font-heading text-paper">
             {mode === 'create' ? 'Add New Product' : 'Edit Product'}
           </DialogTitle>
+
           <DialogDescription className="ed-kicker text-[10px] text-gold">
             {draft.id || 'New product'}
           </DialogDescription>
@@ -908,10 +918,10 @@ export function ProductEditor({
             </div>
 
             {/* ─── Save / Delete ─── */}
-            <div className="ed-double-rule flex flex-col gap-2 pt-2 md:flex-row-reverse">
+            <div className="ed-double-rule flex flex-col gap-2 pt-2 md:flex-row-reverse mb-10 sm:mb-2">
               <Button
                 type="button"
-                className="flex-1 rounded-none bg-red text-paper hover:bg-red/90"
+                className="flex-1 rounded-none bg-red text-paper hover:bg-red/90 p-3"
                 onClick={handleSave}
                 disabled={saving || uploadingImage}
               >
