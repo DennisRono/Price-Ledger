@@ -239,35 +239,55 @@ export function VoiceListener({ products, onPick }: VoiceListenerProps) {
 
       {matches.length > 0 ? (
         <ul className="flex flex-col divide-y divide-ink/10 border border-ink/15">
-          {matches.map((p) => (
-            <li key={p.id}>
-              <button
-                type="button"
-                onClick={() => onPick(p)}
-                className="flex w-full items-center gap-3 bg-card px-2 py-2 text-left hover:bg-parchment"
-              >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden border border-ink/15 bg-parchment">
-                  {p.image_url ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={p.image_url || '/placeholder.svg'}
-                      alt=""
-                      className="h-full w-full object-contain mix-blend-multiply"
-                      crossOrigin="anonymous"
-                    />
-                  ) : (
-                    <ImageOff className="h-4 w-4 text-muted-foreground" />
-                  )}
-                </span>
-                <span className="min-w-0 flex-1 truncate text-sm font-semibold">
-                  {p.name}
-                </span>
-                <span className="font-heading shrink-0 text-base font-black text-red">
-                  {formatPrice(p.pricing?.unit_price_cents, p.pricing?.currency)}
-                </span>
-              </button>
-            </li>
-          ))}
+          {matches.map((p) => {
+            // Extract active promotions (offers) just like SearchBar
+            const activePromotions =
+              p.promotions?.filter((pr: any) => pr.active) ?? []
+            const promotionLabels = activePromotions
+              .map((pr: any) => pr.label)
+              .join(', ')
+
+            return (
+              <li key={p.id}>
+                <button
+                  type="button"
+                  onClick={() => onPick(p)}
+                  className="flex w-full items-center gap-3 bg-card px-2 py-2 text-left hover:bg-parchment"
+                >
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden border border-ink/15 bg-parchment">
+                    {p.image_url ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={p.image_url || '/placeholder.svg'}
+                        alt=""
+                        className="h-full w-full object-contain mix-blend-multiply"
+                        crossOrigin="anonymous"
+                      />
+                    ) : (
+                      <ImageOff className="h-4 w-4 text-muted-foreground" />
+                    )}
+                  </span>
+                  <span className="min-w-0 flex-1 truncate text-sm font-semibold">
+                    {p.name}
+                  </span>
+                  {/* Price + Promotion */}
+                  <span className="flex shrink-0 flex-col items-end">
+                    <span className="font-heading text-base font-black text-red">
+                      {formatPrice(
+                        p.pricing?.unit_price_cents,
+                        p.pricing?.currency,
+                      )}
+                    </span>
+                    {promotionLabels && (
+                      <span className="text-xs font-medium text-green-600">
+                        {promotionLabels}
+                      </span>
+                    )}
+                  </span>
+                </button>
+              </li>
+            )
+          })}
         </ul>
       ) : null}
     </div>
