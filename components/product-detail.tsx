@@ -46,12 +46,12 @@ export function ProductDetail({
           </DialogTitle>
 
           <DialogClose>
-            <button
+            <div
               className="absolute right-3 top-3 text-paper hover:opacity-70"
               aria-label="Close dialog"
             >
               <X className="h-5 w-5" />
-            </button>
+            </div>
           </DialogClose>
         </DialogHeader>
 

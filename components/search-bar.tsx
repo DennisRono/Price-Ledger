@@ -25,7 +25,7 @@ export function SearchBar({
   onValueChange,
   onSelect,
   className,
-  posMode = false
+  posMode = false,
 }: SearchBarProps) {
   const [open, setOpen] = useState(false)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -120,7 +120,9 @@ export function SearchBar({
       </div>
 
       {!posMode && open && value.trim() && results.length > 0 ? (
-        <ul className="absolute z-50 mt-1 max-h-[60vh] w-full overflow-auto border-2 border-ink bg-card shadow-[4px_4px_0_0_var(--ink)]">
+        <ul
+          className={`absolute z-50 mt-1 max-h-[60vh] ${posMode && 'w-full'} overflow-auto border-2 border-ink bg-card shadow-[4px_4px_0_0_var(--ink)]`}
+        >
           {results.map((p, i) => {
             const activePromotions =
               p.promotions?.filter((pr: any) => pr.active) ?? []

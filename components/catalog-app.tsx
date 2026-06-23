@@ -43,6 +43,7 @@ export function CatalogApp({
 }: CatalogAppProps) {
   const { mutate } = useSWRConfig()
   const [stores, setStores] = useState<StoreMeta[]>(initialStores)
+  console.log(stores)
 
   const [activeStoreId, setActiveStoreId] = useState(() => {
     if (typeof window === 'undefined') return initialStores[0]?.id ?? ''
