@@ -68,6 +68,12 @@ export async function ensureSeeded(): Promise<StoreIndex> {
         createdAt: new Date().toISOString(),
         productCount: seedCatalog.products.length,
       },
+      {
+        id: 'pitt-quick-stop-at-ensley',
+        name: 'Pitt Quick Stop at Ensley',
+        createdAt: '2026-06-21T20:32:12.237Z',
+        productCount: 295,
+      },
     ],
   }
   await writeIndex(index)
